@@ -1,0 +1,2 @@
+include README.rst Makefile MANIFEST.in LICENSE
+include doc/*.rst doc/Makefile doc/conf.py doc/make.bat

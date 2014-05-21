@@ -1,0 +1,12 @@
+Source: python-spongeshaker
+Section: python
+Priority: extra
+Maintainer: Marko Kreen <markokr@gmail.com>
+Build-Depends: debhelper (>= 8), python-all (>= 2.6.6-3~)
+Standards-Version: 3.9.2
+
+Package: python-spongeshaker
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Description: Keccak
+ C modules for crypto.
