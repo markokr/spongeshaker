@@ -44,7 +44,11 @@
 /* For SHA3 variant of Keccak */
 #define KECCAK_ROUNDS 24
 
-#define KECCAK_SMALL
+/*
+ * Enforce minimal code size.  If this is not defined, use
+ * faster unrolled implementation.
+ */
+/* #define KECCAK_SMALL */
 
 #ifdef KECCAK_SMALL
 #define KECCAK_64BIT
