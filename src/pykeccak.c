@@ -420,7 +420,7 @@ static PyGetSetDef Sponge_getters[] = {
 static PyTypeObject SpongeType = {
 	PyVarObject_HEAD_INIT(NULL, 0)
 	SPONGE_MODULE "." SPONGE_CLASS,	/* tp_name */
-	sizeof(SpongeType),	/* tp_size */
+	sizeof(SpongeObject),	/* tp_size */
 	0,			/* tp_itemsize */
 	Sponge_dealloc,	/* tp_dealloc */
 	0,			/* tp_print */
