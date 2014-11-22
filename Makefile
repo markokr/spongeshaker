@@ -23,7 +23,7 @@ doc3:
 	make doc2 PYTHON=python3
 
 clean:
-	rm -rf build */*.pyc doc/_build
+	rm -rf build */*.pyc doc/_build spongeshaker/__pycache__
 
 tags:
 	ctags src/*.[ch]
