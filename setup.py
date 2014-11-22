@@ -15,7 +15,7 @@ setup(
     long_description = ldesc,
     packages = ['spongeshaker'],
     ext_modules = [Extension("spongeshaker.keccak",
-                             ["src/keccak.c", "src/pycore.c"])],
+                             ["src/keccak.c", "src/pykeccak.c"])],
     license = "ISC",
     url = "https://github.com/markokr/spongeshaker",
     maintainer = "Marko Kreen",
