@@ -36,6 +36,20 @@ r"""Tests module.
 >>> sha3_512(LONG).hexdigest()
 '6e8b8bd195bdd560689af2348bdc74ab7cd05ed8b9a57711e9be71e9726fda4591fee12205edacaf82ffbbaf16dff9e702a708862080166c2ff6ba379bc7ffc2'
 
+>>> shake128(EMPTY).hexdigest()
+'7f9c2ba4e88f827d616045507605853ed73b8093f6efbc88eb1a6eacfa66ef26'
+>>> shake128(SHORT).hexdigest()
+'3a0faca70c9d2b81d1064d429ea3b05ad27366f64985379ddd75bc73d6a83810'
+>>> shake128(LONG).hexdigest()
+'14236e75b9784df4f57935f945356cbe383fe513ed30286f91060759bcb0ef4b'
+
+>>> shake256(EMPTY).hexdigest()
+'46b9dd2b0ba88d13233b3feb743eeb243fcd52ea62b81b82b50c27646ed5762fd75dc4ddd8c0f200cb05019d67b592f6fc821c49479ab48640292eacb3b7c4be'
+>>> shake256(SHORT).hexdigest()
+'57119c4507f975ad0e9ea4f1166e5f9b590bf2671aaeb41d130d2c570bafc579b0b9ec485cc736a0a848bbc886cbaa79ffcd067ce64b3b410741ab011c544225'
+>>> shake256(LONG).hexdigest()
+'8a5199b4a7e133e264a86202720655894d48cff344a928cf8347f48379cef347dfc5bcffab99b27b1f89aa2735e23d30088ffa03b9edb02b9635470ab9f10389'
+
 State copy.
 
 >>> x = sha3_256(bs("The quick brown fox jumps over the lazy dog"))
