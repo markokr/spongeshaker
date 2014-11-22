@@ -6,9 +6,9 @@ This module implements Keccak-f1600 sponge permutation and high-level
 APIs for various modes of it, including SHA-3 hashes.
 
 SHA-3 standard is not finalized, so actual output values are not stable yet.
-This implementation is up-to-date with Apr-2014 draft of `FIPS-202`_.
-(Although it's unlikely that final SHA-3 changes hash parameters or padding
-again, instead they might add more modes.)
+This implementation is up-to-date with 28-May-2014 draft of `FIPS-202`_.
+(Although it's unlikely that final SHA-3 changes hash parameters or
+padding again, instead they might add more modes.)
 
 Features:
 
