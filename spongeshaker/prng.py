@@ -4,19 +4,20 @@
 from .keccak import KeccakSponge
 from .util import PAD_KECCAK
 
-__all__ = ['KeccakPRNG']
+__all__ = ['SpongePRNG', 'KeccakPRNG']
 
-class KeccakPRNG(object):
-    """Keccak as PRNG.
+class SpongePRNG(object):
+    """Sponge as PRNG.
     """
-    __slots__ = ('_sponge', '_initialized', '_extracting')
+    __slots__ = ('_sponge', '_initialized', '_extracting', '_padding')
 
-    def __init__(self, capacity):
+    def __init__(self, sponge, padding = PAD_KECCAK):
         """Initialize PRNG state with specified Keccak variant.
         """
-        self._sponge = KeccakSponge(capacity)
+        self._sponge = sponge
         self._initialized = 0
         self._extracting = 0
+        self._padding = padding
 
     def add_entropy(self, data):
         """Import new random data into state.
@@ -35,7 +36,13 @@ class KeccakPRNG(object):
             raise Exception("PRNG has no entropy.")
         if not self._extracting:
             # add_entropy was called, need to pad+permute
-            self._sponge.pad(PAD_KECCAK)
+            self._sponge.pad(self._padding)
             self._extracting = 1
         return self._sponge.squeeze(nbytes)
+
+class KeccakPRNG(SpongePRNG):
+    """Keccak as PRNG.
+    """
+    def __init__(self, capacity = 512, padding = PAD_KECCAK):
+        super(KeccakPRNG, self).__init__(KeccakSponge(capacity), padding)
 
