@@ -2,6 +2,11 @@
 spongeshaker
 ============
 
+Version 1.2
+-----------
+
+* Include keccak.h in tarball.
+
 Version 1.1
 -----------
 
