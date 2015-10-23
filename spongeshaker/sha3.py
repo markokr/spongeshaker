@@ -1,6 +1,15 @@
-"""Proposed SHA3 algorithm selection.
+"""Final SHA3 algorithm selection.
 
-Current values correspond to draft FIPS 202 (Apr 2014).
+Current values correspond to final FIPS 202 (Aug 2015).
+
+All hash objects follow common `hashlib`_ interface for
+hash functions.  shake128 and shake256 will returns
+256- and 512- bit result from .digest() by default.
+It can be changed by giving alternative bit-length
+to init function.
+
+Alternatively, .extract() function can be called
+repeatedly to get unlimited stream of result bytes.
 """
 
 from .hashing import SpongeHash

@@ -34,5 +34,8 @@ deb:
 debclean: clean
 	rm -rf debian/python-spongeshaker* debian/files
 
+upload:
+	python setup.py sdist upload
+
 .PHONY: tags deb clean doc2 doc3
 
