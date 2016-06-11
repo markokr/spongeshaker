@@ -4,3 +4,12 @@ tmp
 *.egg-info
 __pycache__
 build
+*.swp
+
+*.substvars
+*.debhelper
+*.log
+*-stamp
+debian/python*
+.pybuild
+debian/files
