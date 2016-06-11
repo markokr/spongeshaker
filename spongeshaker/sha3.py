@@ -14,9 +14,9 @@ repeatedly to get unlimited stream of result bytes.
 
 from __future__ import division, absolute_import, print_function
 
-from .hashing import SpongeHash
-from .keccak import KeccakSponge
-from .util import fromhex
+from spongeshaker.hashing import SpongeHash
+from spongeshaker.keccak import KeccakSponge
+from spongeshaker.util import fromhex
 
 __all__ = [
     'sha3_224',

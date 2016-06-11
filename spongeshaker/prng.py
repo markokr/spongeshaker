@@ -3,8 +3,8 @@
 
 from __future__ import division, absolute_import, print_function
 
-from .keccak import KeccakSponge
-from .util import PAD_KECCAK
+from spongeshaker.keccak import KeccakSponge
+from spongeshaker.util import PAD_KECCAK
 
 __all__ = ['SpongePRNG', 'KeccakPRNG']
 

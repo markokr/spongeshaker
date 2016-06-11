@@ -3,8 +3,7 @@
 
 from __future__ import division, absolute_import, print_function
 
-from .util import tohex
-from .sponge import Sponge
+from spongeshaker.util import tohex
 
 __all__ = ['SpongeHash', 'SpongeHashInvalidState']
 
