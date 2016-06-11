@@ -51,10 +51,10 @@ class SpongeHash(object):
     def copy(self):
         """Create copy of current state.
         """
-        s2 = self._sponge.copy()
-        return SpongeHash(s2.capacity, self.digest_size * 8,
+        clone = self._sponge.copy()
+        return SpongeHash(clone.capacity, self.digest_size * 8,
                 None, self.name, None, self._padding,
-                s2, self._extracting)
+                clone, self._extracting)
 
     def update(self, data):
         """Update state with data.

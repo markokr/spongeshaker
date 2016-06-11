@@ -55,8 +55,8 @@ class SpongeWrap(object):
             dlen = len(data) - dpos
             if dlen > avail:
                 dlen = avail
-            r = sfunc(data[dpos : dpos + dlen])
-            res.append(r)
+            processed = sfunc(data[dpos : dpos + dlen])
+            res.append(processed)
             dpos += dlen
         return res
 
@@ -71,9 +71,9 @@ class SpongeWrap(object):
         res = self._add(data, _PAD_KEYSTREAM, self._sponge.decrypt)
         return _EMPTY.join(res)
 
-    def digest(self, n):
+    def digest(self, digest_size):
         if self._cur_pad:
             self._sponge.pad(_PAD_PLAINSTREAM)
             self._cur_pad = None
-        return self._sponge.squeeze(n)
+        return self._sponge.squeeze(digest_size)
 

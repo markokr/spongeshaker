@@ -10,19 +10,19 @@ __all__ = []
 
 # Convertsion to/from hex string
 if sys.hexversion < 0x3000000:
-    def tohex(s):
-        return b2a_hex(s)
-    def fromhex(s):
-        return a2b_hex(s)
+    def tohex(bstr):
+        return b2a_hex(bstr)
+    def fromhex(strval):
+        return a2b_hex(strval)
 else:
-    def tohex(s):
-        if isinstance(s, str):
-            s = s.encode('ascii')
-        return b2a_hex(s).decode('ascii')
-    def fromhex(s):
-        if isinstance(s, str):
-            s = s.encode('ascii')
-        return a2b_hex(s)
+    def tohex(bstr):
+        if isinstance(bstr, str):
+            bstr = bstr.encode('ascii')
+        return b2a_hex(bstr).decode('ascii')
+    def fromhex(strval):
+        if isinstance(strval, str):
+            strval = strval.encode('ascii')
+        return a2b_hex(strval)
 
 
 # Simple 10*1 padding for basic Keccak
