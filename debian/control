@@ -2,11 +2,19 @@ Source: python-spongeshaker
 Section: python
 Priority: extra
 Maintainer: Marko Kreen <markokr@gmail.com>
-Build-Depends: debhelper (>= 8), python-all (>= 2.6.6-3~)
+Build-Depends: debhelper (>= 9), dh-python, python-all-dev, python3-all-dev, python-setuptools, python3-setuptools
 Standards-Version: 3.9.2
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.3
 
 Package: python-spongeshaker
 Architecture: any
 Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Description: Keccak
+ C modules for crypto.
+
+Package: python3-spongeshaker
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Description: Keccak
  C modules for crypto.

@@ -1,7 +1,9 @@
 #!/usr/bin/make -f
 
-#DH_VERBOSE=1
+#export DH_VERBOSE = 1
+export DEB_BUILD_OPTIONS = nocheck
+export PYBUILD_NAME = spongeshaker
 
 %:
-	dh $@ --with python2 --buildsystem=python_distutils
+	dh $@ --with python2,python3 --buildsystem=pybuild
 
