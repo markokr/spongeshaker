@@ -2,7 +2,7 @@
 
 Current values correspond to final FIPS 202 (Aug 2015).
 
-All hash objects follow common `hashlib`_ interface for
+All hash objects follow common :mod:`hashlib` interface for
 hash functions.  shake128 and shake256 will returns
 256- and 512- bit result from .digest() by default.
 It can be changed by giving alternative bit-length
