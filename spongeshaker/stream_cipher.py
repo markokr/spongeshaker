@@ -40,7 +40,7 @@ class SpongeStreamCipher(object):
     _ENCRYPT = 2
     _DECRYPT = 3
 
-    def __init__(self, sponge, initial_data_pad = PAD_KECCAK, data_pad = PAD_KECCAK):
+    def __init__(self, sponge, initial_data_pad=PAD_KECCAK, data_pad=PAD_KECCAK):
         """Set up Keccak stream with given capacity (in bits) and padding.
         """
         self._sponge = sponge
@@ -81,6 +81,6 @@ class SpongeStreamCipher(object):
         return self._sponge.squeeze_xor(ciphertext)
 
 class KeccakStreamCipher(SpongeStreamCipher):
-    def __init__(self, capacity = 512, initial_data_pad = PAD_KECCAK, data_pad = PAD_KECCAK):
+    def __init__(self, capacity=512, initial_data_pad=PAD_KECCAK, data_pad=PAD_KECCAK):
         super(KeccakStreamCipher, self).__init__(KeccakSponge(capacity), initial_data_pad, data_pad)
 

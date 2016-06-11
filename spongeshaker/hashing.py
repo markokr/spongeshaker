@@ -16,11 +16,9 @@ class SpongeHash(object):
     __slots__ = ('name', 'block_size', 'digest_size', '_padding', '_sponge', '_extracting')
 
     def __init__(self, capacity_bits, output_bits,
-                 data=None, name = None,
-                 sponge_class = None,
-                 padding = None,
-                 _sponge = None,
-                 _extracting = False):
+                 data=None, name=None,
+                 sponge_class=None, padding=None,
+                 _sponge=None, _extracting=False):
         """Initialize sponge instance with specified parameters.
 
         Parameters:

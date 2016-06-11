@@ -13,7 +13,7 @@ class SpongePRNG(object):
     """
     __slots__ = ('_sponge', '_initialized', '_extracting', '_padding')
 
-    def __init__(self, sponge, padding = PAD_KECCAK):
+    def __init__(self, sponge, padding=PAD_KECCAK):
         """Initialize PRNG state with specified Keccak variant.
         """
         self._sponge = sponge
@@ -45,6 +45,6 @@ class SpongePRNG(object):
 class KeccakPRNG(SpongePRNG):
     """Keccak as PRNG.
     """
-    def __init__(self, capacity = 512, padding = PAD_KECCAK):
+    def __init__(self, capacity=512, padding=PAD_KECCAK):
         super(KeccakPRNG, self).__init__(KeccakSponge(capacity), padding)
 

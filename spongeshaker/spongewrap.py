@@ -30,7 +30,7 @@ class SpongeWrap(object):
     """
     __slots__ = ('_sponge', '_cur_pad')
 
-    def __init__(self, capacity = 512, sponge_class = KeccakSponge):
+    def __init__(self, capacity=512, sponge_class=KeccakSponge):
         self._sponge = sponge_class(capacity)
         self._cur_pad = _PAD_PLAINSTREAM
 
