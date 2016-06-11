@@ -3,3 +3,4 @@ tmp
 .tox
 *.egg-info
 __pycache__
+build
