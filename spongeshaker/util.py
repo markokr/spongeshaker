@@ -1,6 +1,8 @@
 """Random helper code.
 """
 
+from __future__ import division, absolute_import, print_function
+
 import sys
 from binascii import b2a_hex, a2b_hex
 

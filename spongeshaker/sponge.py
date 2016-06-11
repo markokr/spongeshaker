@@ -1,6 +1,8 @@
 """Low-level API for sponge implementations.
 """
 
+from __future__ import division, absolute_import, print_function
+
 __all__ = ['Sponge']
 
 class Sponge(object):

@@ -1,6 +1,8 @@
 """High-level APIs to Keccak1600 algorithm.
 """
 
+from __future__ import division, absolute_import, print_function
+
 from .util import tohex
 from .sponge import Sponge
 

@@ -12,6 +12,8 @@ Alternatively, .extract() function can be called
 repeatedly to get unlimited stream of result bytes.
 """
 
+from __future__ import division, absolute_import, print_function
+
 from .hashing import SpongeHash
 from .keccak import KeccakSponge
 from .util import fromhex

@@ -3,6 +3,8 @@
 http://sponge.noekeon.org/SpongeDuplex.pdf
 """
 
+from __future__ import division, absolute_import, print_function
+
 from .keccak import KeccakSponge
 from .util import fromhex
 
