@@ -1,10 +1,14 @@
-#! /usr/bin/env python
+"""Setup for Spongeshaker.
+"""
 
-from distutils.core import setup
-from distutils.extension import Extension
-import spongeshaker
+from setuptools import setup, Extension
 
-vers = spongeshaker.__version__
+import re
+
+vrx = r"""^__version__ *= *['"]([^'"]+)['"]"""
+src = open("spongeshaker/__init__.py").read()
+vers = re.search(vrx, src, re.M).group(1)
+
 ldesc = open("README.rst").read().strip()
 sdesc = ldesc.split('\n')[0].split(' - ')[1].strip()
 
@@ -14,9 +18,9 @@ setup(
     description = sdesc,
     long_description = ldesc,
     packages = ['spongeshaker'],
-    ext_modules = [Extension("spongeshaker.keccak",
-                             ["src/keccak.c", "src/pykeccak.c"],
-                             depends = ['src/keccak.h'])],
+    ext_modules = [
+        Extension("spongeshaker.keccak", ["src/keccak.c", "src/pykeccak.c"],
+                  depends = ['src/keccak.h'])],
     license = "ISC",
     url = "https://github.com/markokr/spongeshaker",
     maintainer = "Marko Kreen",
@@ -33,5 +37,6 @@ setup(
         "Programming Language :: C",
         "Topic :: Security :: Cryptography",
         "Topic :: Software Development :: Libraries :: Python Modules",
-    ])
+    ]
+)
 
